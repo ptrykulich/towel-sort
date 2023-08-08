@@ -2,5 +2,14 @@
 // You should implement your task here.
 
 module.exports = function towelSort (matrix) {
-  return [];
+  if (!matrix || !matrix.length) return [];
+
+  return matrix.reduce((acc, curr, index) => {
+    if (index % 2 === 0) {
+      acc.push(...curr);
+    } else {
+      acc.push(...curr.reverse());
+    }
+    return acc;
+  }, []);
 }
